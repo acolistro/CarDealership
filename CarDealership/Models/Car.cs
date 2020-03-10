@@ -4,12 +4,16 @@ namespace Dealership.Models
 {
   public class Car
   {
-    public string Description { get; set; }
+    public string MakeModel { get; set; }
+    public int Price { get; set; }
+    public int Miles { get; set; }
     private static List<Car> _instances = new List<Car> {};
 
-    public Car (string description)
+    public Car (string makeModel, int price, int miles)
     {
-      Description = description;
+      MakeModel = makeModel;
+      Price = price;
+      Miles = miles;
       _instances.Add(this);
     }
 
