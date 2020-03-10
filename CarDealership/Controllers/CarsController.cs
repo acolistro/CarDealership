@@ -4,28 +4,27 @@ using System.Collections.Generic;
 
 namespace Dealership.Controllers
 {
-  public class HomeController : Controller
+  public class CarsController : Controller
   {
-
-    [HttpGet("/")]
+    [HttpGet("/cars")]
     public ActionResult Index()
     {
       List<Car> allCars = Car.GetAll();
       return View(allCars);
     }
 
-    [HttpGet("/items/new")]
+    [HttpGet("/cars/new")]
     public ActionResult CreateForm()
     {
       return View();
     }
 
-    [HttpPost("/items")]
+    [HttpPost("/cars")]
     public ActionResult Create(string description)
     {
       Car myCar = new Car(description);
       return RedirectToAction("Index");
     }
-
+    
   }
 }
