@@ -14,16 +14,16 @@ namespace Dealership.Controllers
       return View(allCars);
     }
 
-    [HttpGet("/items/new")]
+    [HttpGet("/cars/new")]
     public ActionResult CreateForm()
     {
       return View();
     }
 
-    [HttpPost("/items")]
-    public ActionResult Create(string description)
+    [HttpPost("/cars")]
+    public ActionResult Create(string makeModel, int price, int miles)
     {
-      Car myCar = new Car(description);
+      Car myCar = new Car(makeModel, price, miles);
       return RedirectToAction("Index");
     }
 

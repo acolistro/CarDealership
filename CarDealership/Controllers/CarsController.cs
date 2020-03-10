@@ -20,9 +20,9 @@ namespace Dealership.Controllers
     }
 
     [HttpPost("/cars")]
-    public ActionResult Create(string description)
+    public ActionResult Create(string makemodel, int price, int miles)
     {
-      Car myCar = new Car(description);
+      Car myCar = new Car(makeModel, price, miles);
       return RedirectToAction("Index");
     }
     
